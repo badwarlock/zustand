@@ -81,7 +81,7 @@ export const devtools =
       return fn(set, get, api)
     }
     const namedSet: NamedSet<S> = (state, replace, name) => {
-      set(state, replace)
+      set(state, replace, name)
       if (!api.dispatch && api.devtools) {
         api.devtools.send(api.devtools.prefix + (name || 'action'), get())
       }
